@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-scrapbox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gatsby source plugin for building websites using Scrapbox.io as a data source.",
   "main": "gatsby-node.js",
   "repository": {
