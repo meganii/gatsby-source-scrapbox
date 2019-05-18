@@ -1,4 +1,5 @@
 const axios = require('axios')
+const crypto = require('crypto')
 const Promise = require('bluebird')
 
 const SKIP_COUNT = 100
@@ -54,7 +55,10 @@ exports.sourceNodes = async (
           internal: {
             type: 'ScrapboxPage',
             content: JSON.stringify(page),
-            contentDigest: createContentDigest(page)
+            contentDigest: crypto
+              .createHash('md5')
+              .update(JSON.stringify(page))
+              .digest('hex')
           }
         })
       })
